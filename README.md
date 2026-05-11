@@ -1,4 +1,3 @@
-
 > **version:** 2.720.1164
 
 > **binary:** roblox ios ( arm64 )
@@ -6,7 +5,7 @@
 
 > **download:** [https://decrypt.day/app/id431946152](https://decrypt.day/app/id431946152)
 
-lowk took a bit to get this finished but we here. this is basically the full map for the luau vm internals for the ios binary. structs, offsets, all the logic. remember this is **luau** ( roblox fork ) not just regular lua 5.1 so don't try to use standard offsets or everything is gonna be cooked. 
+lowk took a bit to get this finished but we here. this is basically the full map for the luau vm internals for the ios binary. structs, offsets, all the logic. remember this is **luau** ( roblox fork ) not just regular lua 5.1 so don't try to use standard offsets or everything is gonna be cooked.
 
 ---
 
@@ -28,7 +27,7 @@ if u wanna check the work or keep going where i left off, here is how i actually
 
 * `[ high ]` - seen directly in decompiler
 * `[ med ]` - assumed from source patterns
-* `[ low ]` - best guess based on field 
+* `[ low ]` - best guess based on field
 
 ---
 
@@ -91,7 +90,7 @@ tstring + 0x18 = data[]  ( inline chars )
 
 ## callinfo ( 0x28 bytes )
 
-> **note:** `func` is definitely at `+0x18` in this binary. 
+> **note:** `func` is definitely at `+0x18` in this binary.
 
 ```cpp
 ci + 0x00 = top      ( stkid )   [ high ]
@@ -131,7 +130,7 @@ g + 0x38  = strt.size   ( uint )
 g + 0x40  = strt.hash   ( tstring** )
 g + 0x320 = tmname[0]   ( "__index" at 0x512e4d5 )
 g + 0x328 = tmname[1]   ( "__newindex" at 0x512e4dd )
-g + 0x340 = tmname[4]   ( "__call" at 0x52e1175 )
+g + 0x340 = tmname[4]   ( "__call" at 0x5132f0e )
 g + 0x3c8 = ttname[0]   ( "nil" )
 g + 0x3d0 = ttname[1]   ( "boolean" at 0x50777ac )
 g + 0x3e0 = ttname[3]   ( "number" )
@@ -155,7 +154,7 @@ g + 0x3e0 = ttname[3]   ( "number" )
 ### thread / state
 
 ```cpp
-0x03f675c8 = lua_resume ( lua_state*, stkid func )
+0x03f67530 = lua_resume ( lua_state*, stkid func )
 0x03f6fac4 = luae_newstate ( lua_state* )
 
 ```
