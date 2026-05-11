@@ -7,6 +7,11 @@
 
 lowk took a bit to get this finished but we here. this is basically the full map for the luau vm internals for the ios binary. structs, offsets, all the logic. remember this is **luau** ( roblox fork ) not just regular lua 5.1 so don't try to use standard offsets or everything is gonna be cooked.
 
+**lua_resume =** `0x03f674dc`
+**precheck =** `0x03f67530`
+**resume engine =** `0x03f675c8`
+**post cleanup =** `0x03f676dc`
+
 ---
 
 ## how this was done
